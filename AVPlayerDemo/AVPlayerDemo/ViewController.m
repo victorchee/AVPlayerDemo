@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "VCPlayer.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet VCPlayer *palyerView;
 
 @end
 
@@ -17,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.palyerView.videoURL = [NSURL URLWithString:@"http://video.cmgame.com/videos/ybcp/qmqzmeiziduomaomaoweinisi4.mp4"];
+    [self.palyerView play];
 }
 
 - (void)didReceiveMemoryWarning {
