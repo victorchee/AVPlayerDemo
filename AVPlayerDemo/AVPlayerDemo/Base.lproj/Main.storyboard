@@ -92,7 +92,7 @@
                                         <rect key="frame" x="240" y="134" width="120" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-80-lal">
-                                                <rect key="frame" x="39" y="24.5" width="42" height="21"/>
+                                                <rect key="frame" x="39" y="24" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -106,6 +106,24 @@
                                             <constraint firstItem="OEz-80-lal" firstAttribute="centerX" secondItem="DQI-u0-frq" secondAttribute="centerX" id="dvt-LD-dmX"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-3t-ge4">
+                                        <rect key="frame" x="240" y="134" width="120" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHW-h1-p63">
+                                                <rect key="frame" x="47" y="24.5" width="26.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="FHW-h1-p63" firstAttribute="centerY" secondItem="Hdo-3t-ge4" secondAttribute="centerY" id="1MC-aj-2GX"/>
+                                            <constraint firstAttribute="width" constant="120" id="GZl-EN-ywG"/>
+                                            <constraint firstItem="FHW-h1-p63" firstAttribute="centerX" secondItem="Hdo-3t-ge4" secondAttribute="centerX" id="QuV-51-RhD"/>
+                                            <constraint firstAttribute="height" constant="70" id="mbU-AY-tDb"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -116,13 +134,16 @@
                                     <constraint firstItem="DQI-u0-frq" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="PNa-oV-xNH"/>
                                     <constraint firstItem="asl-od-pRC" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="Rs9-gT-X3f"/>
                                     <constraint firstAttribute="trailing" secondItem="Z2C-2f-7aJ" secondAttribute="trailing" id="ao6-ZG-kdt"/>
+                                    <constraint firstItem="Hdo-3t-ge4" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="bdu-Sn-Imb"/>
                                     <constraint firstItem="DQI-u0-frq" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="bs7-PJ-tps"/>
+                                    <constraint firstItem="Hdo-3t-ge4" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="e2x-y7-VBC"/>
                                     <constraint firstItem="asl-od-pRC" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="h4U-WE-RHn"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="durationLabel" destination="YJr-uf-Q2I" id="st8-fD-p34"/>
                                     <outlet property="indicator" destination="asl-od-pRC" id="bRj-jT-l7C"/>
-                                    <outlet property="leftTimeLabel" destination="YJr-uf-Q2I" id="XFn-qj-n9A"/>
                                     <outlet property="playedTimeLabel" destination="VxG-Oa-xTt" id="VA4-JI-Hep"/>
+                                    <outlet property="progressLabel" destination="FHW-h1-p63" id="NQs-Qb-6QY"/>
                                     <outlet property="progressSlider" destination="WrF-Rg-et3" id="RCC-8d-rNZ"/>
                                     <outlet property="volumeLabel" destination="OEz-80-lal" id="OLb-rA-0iJ"/>
                                     <outletCollection property="gestureRecognizers" destination="Zyi-Xd-Fag" appends="YES" id="wPf-mH-Ivu"/>

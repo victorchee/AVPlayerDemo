@@ -27,9 +27,10 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 @property (weak, nonatomic) IBOutlet UILabel *playedTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *leftTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *volumeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @end
 
@@ -79,6 +80,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
         __strong VCPlayer *strongSelf = weakSelf;
         strongSelf.playedTimeLabel.text = [NSString stringWithFormat:@"%.0f", CMTimeGetSeconds(strongSelf.player.currentTime)];
         strongSelf.progressSlider.value = CMTimeGetSeconds(strongSelf.player.currentTime);
+        strongSelf.progressLabel.text = [NSString stringWithFormat:@"%.0f/%.0f", strongSelf.progressSlider.value, strongSelf.progressSlider.maximumValue];
     }];
     
     [self.player.currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
@@ -134,6 +136,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
         case UIGestureRecognizerStateBegan: {
             gesturePoint = [sender translationInView:self];
             self.volumeLabel.superview.hidden = YES;
+            self.progressLabel.superview.hidden = YES;
             panDirection = PanDirectionNone;
         }
             break;
@@ -146,6 +149,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
                 // 确定滑动方向
                 if (deltaX > 5) {
                     panDirection = PanDirectionHorizon;
+                    self.progressLabel.superview.hidden = NO;
                 } else if (deltaY > 5) {
                     panDirection = PanDirectionVertical;
                     self.volumeLabel.superview.hidden = NO;
@@ -160,7 +164,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
                 } else if (time < self.progressSlider.minimumValue) {
                     time = self.progressSlider.minimumValue;
                 }
-                NSLog(@"%f", time);
+                NSLog(@"deltaX:%f", time);
                 [self.player seekToTime:CMTimeMakeWithSeconds(time, 1)];
             } else if (panDirection == PanDirectionVertical) {
                 // 调节音量
@@ -175,11 +179,14 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
                 self.volumeLabel.text = [NSString stringWithFormat:@"%ld%%", (NSInteger)(volume*100.0)];
             }
             
-            gesturePoint = point;
+            if (panDirection != PanDirectionNone) {
+                gesturePoint = point;
+            }
         }
             break;
         case UIGestureRecognizerStateEnded: {
             self.volumeLabel.superview.hidden = YES;
+            self.progressLabel.superview.hidden = YES;
             gesturePoint = CGPointZero;
             panDirection = PanDirectionNone;
         }
@@ -208,7 +215,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
             case AVPlayerStatusReadyToPlay: {
                 if (CMTimeGetSeconds(self.player.currentItem.duration)) {
                     self.progressSlider.maximumValue = CMTimeGetSeconds(self.player.currentItem.duration);
-                    self.leftTimeLabel.text = [NSString stringWithFormat:@"%.0f", self.progressSlider.maximumValue];
+                    self.durationLabel.text = [NSString stringWithFormat:@"%.0f", self.progressSlider.maximumValue];
                 }
                 [self.indicator stopAnimating];
             }
