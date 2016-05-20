@@ -88,14 +88,35 @@
                                         <rect key="frame" x="282" y="150" width="37" height="37"/>
                                         <color key="color" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQI-u0-frq">
+                                        <rect key="frame" x="240" y="134" width="120" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEz-80-lal">
+                                                <rect key="frame" x="39" y="24.5" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="LaI-PB-SI6"/>
+                                            <constraint firstItem="OEz-80-lal" firstAttribute="centerY" secondItem="DQI-u0-frq" secondAttribute="centerY" id="Xjs-fO-2d4"/>
+                                            <constraint firstAttribute="width" constant="120" id="c4k-FZ-7QO"/>
+                                            <constraint firstItem="OEz-80-lal" firstAttribute="centerX" secondItem="DQI-u0-frq" secondAttribute="centerX" id="dvt-LD-dmX"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Z2C-2f-7aJ" firstAttribute="leading" secondItem="PRX-Pc-epL" secondAttribute="leading" id="1E1-Sy-aT9"/>
                                     <constraint firstAttribute="width" secondItem="PRX-Pc-epL" secondAttribute="height" multiplier="16:9" identifier="PortraitConstraint" id="3Ho-Zl-TlT"/>
                                     <constraint firstAttribute="bottom" secondItem="Z2C-2f-7aJ" secondAttribute="bottom" id="IQv-ZW-s0M"/>
+                                    <constraint firstItem="DQI-u0-frq" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="PNa-oV-xNH"/>
                                     <constraint firstItem="asl-od-pRC" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="Rs9-gT-X3f"/>
                                     <constraint firstAttribute="trailing" secondItem="Z2C-2f-7aJ" secondAttribute="trailing" id="ao6-ZG-kdt"/>
+                                    <constraint firstItem="DQI-u0-frq" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="bs7-PJ-tps"/>
                                     <constraint firstItem="asl-od-pRC" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="h4U-WE-RHn"/>
                                 </constraints>
                                 <connections>
@@ -103,6 +124,8 @@
                                     <outlet property="leftTimeLabel" destination="YJr-uf-Q2I" id="XFn-qj-n9A"/>
                                     <outlet property="playedTimeLabel" destination="VxG-Oa-xTt" id="VA4-JI-Hep"/>
                                     <outlet property="progressSlider" destination="WrF-Rg-et3" id="RCC-8d-rNZ"/>
+                                    <outlet property="volumeLabel" destination="OEz-80-lal" id="OLb-rA-0iJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="Zyi-Xd-Fag" appends="YES" id="wPf-mH-Ivu"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -118,6 +141,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Zyi-Xd-Fag">
+                    <connections>
+                        <action selector="pan:" destination="PRX-Pc-epL" id="AyW-OV-U6j"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="245" y="326"/>
         </scene>

@@ -9,15 +9,27 @@
 #import "VCPlayer.h"
 @import AVFoundation;
 
-@interface VCPlayer()
+typedef NS_ENUM(NSUInteger, PanDirection) {
+    PanDirectionNone,
+    PanDirectionHorizon,
+    PanDirectionVertical,
+};
+
+@interface VCPlayer() {
+    CGPoint gesturePoint;
+    PanDirection panDirection;
+}
 
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 @property (weak, nonatomic) IBOutlet UILabel *playedTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *leftTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *volumeLabel;
 
 @end
 
@@ -59,6 +71,8 @@
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
     self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
     [self.layer insertSublayer:self.playerLayer atIndex:0];
+    
+    self.volumeLabel.text = [NSString stringWithFormat:@"%ld%%", (NSInteger)(self.player.volume*100.0)];
     
     __weak VCPlayer *weakSelf = self;
     [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1, 1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
@@ -113,6 +127,67 @@
 
 - (IBAction)progressSliderValueChanged:(UISlider *)sender {
     [self.player seekToTime:CMTimeMakeWithSeconds(sender.value, 1)];
+}
+
+- (IBAction)pan:(UIPanGestureRecognizer *)sender {
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan: {
+            gesturePoint = [sender translationInView:self];
+            self.volumeLabel.superview.hidden = YES;
+            panDirection = PanDirectionNone;
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged: {
+            CGPoint point = [sender translationInView:self];
+            CGFloat deltaX = point.x - gesturePoint.x;
+            CGFloat deltaY = point.y - gesturePoint.y;
+            if (panDirection == PanDirectionNone) {
+                // 确定滑动方向
+                if (deltaX > 5) {
+                    panDirection = PanDirectionHorizon;
+                } else if (deltaY > 5) {
+                    panDirection = PanDirectionVertical;
+                    self.volumeLabel.superview.hidden = NO;
+                }
+            }
+            if (panDirection == PanDirectionHorizon) {
+                // 调节进度
+                CGFloat threshold = CGRectGetWidth(self.frame)/2;
+                CGFloat time = self.progressSlider.value + deltaX/threshold * self.progressSlider.maximumValue;
+                if (time > self.progressSlider.maximumValue) {
+                    time = self.progressSlider.maximumValue;
+                } else if (time < self.progressSlider.minimumValue) {
+                    time = self.progressSlider.minimumValue;
+                }
+                NSLog(@"%f", time);
+                [self.player seekToTime:CMTimeMakeWithSeconds(time, 1)];
+            } else if (panDirection == PanDirectionVertical) {
+                // 调节音量
+                CGFloat threshold = CGRectGetHeight(self.frame)/2;
+                CGFloat volume = self.player.volume - deltaY/threshold;
+                if (volume > 1.0) {
+                    volume = 1.0;
+                } else if (volume < 0) {
+                    volume = 0;
+                }
+                self.player.volume = volume;
+                self.volumeLabel.text = [NSString stringWithFormat:@"%ld%%", (NSInteger)(volume*100.0)];
+            }
+            
+            gesturePoint = point;
+        }
+            break;
+        case UIGestureRecognizerStateEnded: {
+            self.volumeLabel.superview.hidden = YES;
+            gesturePoint = CGPointZero;
+            panDirection = PanDirectionNone;
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)playFinished:(NSNotification *)sender {
