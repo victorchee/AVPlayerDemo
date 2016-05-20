@@ -11,8 +11,6 @@
 @interface VCPlayer : UIView
 
 @property (nonatomic, strong) NSURL *videoURL;
-@property (nonatomic, strong) NSArray *protraintConstraints;
-@property (nonatomic, strong) NSArray *landscapeconstraints;
 
 - (instancetype)initWithFrame:(CGRect)frame andVideoURL:(NSURL *)url;
 

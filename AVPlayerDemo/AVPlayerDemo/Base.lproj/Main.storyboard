@@ -35,17 +35,20 @@
                                                     <action selector="switchPlayOrPause:" destination="PRX-Pc-epL" eventType="touchUpInside" id="QDP-vT-726"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxG-Oa-xTt">
-                                                <rect key="frame" x="52" y="0.0" width="42" height="44"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxG-Oa-xTt">
+                                                <rect key="frame" x="52" y="0.0" width="46" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WrF-Rg-et3">
-                                                <rect key="frame" x="100" y="7" width="400" height="31"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WrF-Rg-et3">
+                                                <rect key="frame" x="104" y="7" width="392" height="31"/>
+                                                <connections>
+                                                    <action selector="progressSliderValueChanged:" destination="PRX-Pc-epL" eventType="valueChanged" id="SNT-ar-BWT"/>
+                                                </connections>
                                             </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJr-uf-Q2I">
-                                                <rect key="frame" x="506" y="0.0" width="42" height="44"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJr-uf-Q2I">
+                                                <rect key="frame" x="502" y="0.0" width="46" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -81,14 +84,26 @@
                                             <constraint firstAttribute="bottom" secondItem="YJr-uf-Q2I" secondAttribute="bottom" id="vda-gH-QVD"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="asl-od-pRC">
+                                        <rect key="frame" x="282" y="150" width="37" height="37"/>
+                                        <color key="color" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Z2C-2f-7aJ" firstAttribute="leading" secondItem="PRX-Pc-epL" secondAttribute="leading" id="1E1-Sy-aT9"/>
                                     <constraint firstAttribute="width" secondItem="PRX-Pc-epL" secondAttribute="height" multiplier="16:9" identifier="PortraitConstraint" id="3Ho-Zl-TlT"/>
                                     <constraint firstAttribute="bottom" secondItem="Z2C-2f-7aJ" secondAttribute="bottom" id="IQv-ZW-s0M"/>
+                                    <constraint firstItem="asl-od-pRC" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="Rs9-gT-X3f"/>
                                     <constraint firstAttribute="trailing" secondItem="Z2C-2f-7aJ" secondAttribute="trailing" id="ao6-ZG-kdt"/>
+                                    <constraint firstItem="asl-od-pRC" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="h4U-WE-RHn"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="indicator" destination="asl-od-pRC" id="bRj-jT-l7C"/>
+                                    <outlet property="leftTimeLabel" destination="YJr-uf-Q2I" id="XFn-qj-n9A"/>
+                                    <outlet property="playedTimeLabel" destination="VxG-Oa-xTt" id="VA4-JI-Hep"/>
+                                    <outlet property="progressSlider" destination="WrF-Rg-et3" id="RCC-8d-rNZ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
