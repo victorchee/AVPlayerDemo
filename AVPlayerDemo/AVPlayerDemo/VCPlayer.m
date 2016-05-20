@@ -68,6 +68,16 @@
 }
 
 - (IBAction)switchFullScreen:(UIButton *)sender {
+    if (sender.isSelected) {
+        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
+        [UIApplication sharedApplication].statusBarHidden = NO;
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+    } else {
+        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+        [UIApplication sharedApplication].statusBarHidden = NO;
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+    }
+    sender.selected = !sender.isSelected;
 }
 
 @end
