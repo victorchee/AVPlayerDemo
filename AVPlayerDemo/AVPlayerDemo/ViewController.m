@@ -20,8 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    self.palyerView.videoURL = [NSURL URLWithString:@"http://video.cmgame.com/videos/ybcp/qmqzmeiziduomaomaoweinisi4.mp4"];
+    NSString *http = @"http://video.cmgame.com/videos/ybcp/qmqzmeiziduomaomaoweinisi4.mp4";
+    NSString *hls = @"http://liveplay.cmgame.com/27871/stream.m3u8";
+    self.palyerView.videoURL = [NSURL URLWithString:hls];
     [self.palyerView play];
 }
 

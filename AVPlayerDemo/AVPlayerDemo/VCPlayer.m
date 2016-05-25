@@ -214,8 +214,11 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
                 
             case AVPlayerStatusReadyToPlay: {
                 if (CMTimeGetSeconds(self.player.currentItem.duration)) {
-                    self.progressSlider.maximumValue = CMTimeGetSeconds(self.player.currentItem.duration);
-                    self.durationLabel.text = [NSString stringWithFormat:@"%.0f", self.progressSlider.maximumValue];
+                    CGFloat duration = CMTimeGetSeconds(self.player.currentItem.duration);
+                    if (duration > self.progressSlider.minimumValue) {
+                        self.progressSlider.maximumValue = CMTimeGetSeconds(self.player.currentItem.duration);
+                        self.durationLabel.text = [NSString stringWithFormat:@"%.0f", self.progressSlider.maximumValue];
+                    }
                 }
                 [self.indicator stopAnimating];
             }
