@@ -37,7 +37,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 @implementation VCPlayer
 
 - (instancetype)initWithFrame:(CGRect)frame andVideoURL:(NSURL *)url {
-    if (self = [super init]) {
+    if (self = [super initWithFrame:frame]) {
         self.videoURL = url;
     }
     return self;
@@ -52,6 +52,8 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
     [self.player.currentItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
     [self.player.currentItem removeObserver:self forKeyPath:@"playbackBufferFull"];
     [self.player.currentItem removeObserver:self forKeyPath:@"presentationSize"];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (AVPlayerItem *)getPlayItemWithURL:(NSURL *)url {
@@ -66,10 +68,10 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 - (void)setVideoURL:(NSURL *)videoURL {
     _videoURL = videoURL;
     
-    AVPlayerItem *payerItem = [self getPlayItemWithURL:videoURL];
-    self.player = [AVPlayer playerWithPlayerItem:payerItem];
+    AVPlayerItem *playerItem = [self getPlayItemWithURL:videoURL];
+    self.player = [AVPlayer playerWithPlayerItem:playerItem];
     [self.playerLayer removeFromSuperlayer];
-    self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
+    self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
     [self.layer insertSublayer:self.playerLayer atIndex:0];
     
