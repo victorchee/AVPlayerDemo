@@ -131,6 +131,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 
 - (IBAction)progressSliderValueChanged:(UISlider *)sender {
     [self.player seekToTime:CMTimeMakeWithSeconds(sender.value, 1)];
+    [self play];
 }
 
 - (IBAction)pan:(UIPanGestureRecognizer *)sender {
@@ -149,10 +150,10 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
             CGFloat deltaY = point.y - gesturePoint.y;
             if (panDirection == PanDirectionNone) {
                 // 确定滑动方向
-                if (deltaX > 5) {
+                if (fabs(deltaX) > 5) {
                     panDirection = PanDirectionHorizon;
                     self.progressLabel.superview.hidden = NO;
-                } else if (deltaY > 5) {
+                } else if (fabs(deltaY) > 5) {
                     panDirection = PanDirectionVertical;
                     self.volumeLabel.superview.hidden = NO;
                 }
@@ -202,6 +203,7 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 - (void)playFinished:(NSNotification *)sender {
     self.progressSlider.value = 0;
     self.playedTimeLabel.text = @"0";
+    self.progressLabel.text = @"0%";
     [self.player seekToTime:kCMTimeZero];
 }
 
