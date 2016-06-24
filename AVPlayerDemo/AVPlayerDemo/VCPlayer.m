@@ -117,15 +117,19 @@ typedef NS_ENUM(NSUInteger, PanDirection) {
 }
 
 - (IBAction)switchFullScreen:(UIButton *)sender {
-    if (sender.isSelected) {
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
-        [UIApplication sharedApplication].statusBarHidden = NO;
-        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
-    } else {
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
-        [UIApplication sharedApplication].statusBarHidden = NO;
-        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+    if ([self.delegate respondsToSelector:@selector(player:didTappedFullscreen:)]) {
+        [self.delegate player:self didTappedFullscreen:sender];
     }
+    
+//    if (sender.isSelected) {
+//        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
+//        [UIApplication sharedApplication].statusBarHidden = NO;
+//        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+//    } else {
+//        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+//        [UIApplication sharedApplication].statusBarHidden = NO;
+//        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+//    }
     sender.selected = !sender.isSelected;
 }
 

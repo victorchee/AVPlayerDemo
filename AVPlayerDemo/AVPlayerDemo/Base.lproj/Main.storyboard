@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRX-Pc-epL" customClass="VCPlayer">
-                                <rect key="frame" x="0.0" y="20" width="600" height="337.5"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="338"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-2f-7aJ">
-                                        <rect key="frame" x="0.0" y="293" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="294" width="600" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7h-6g-aJp">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -110,7 +110,7 @@
                                         <rect key="frame" x="240" y="134" width="120" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHW-h1-p63">
-                                                <rect key="frame" x="47" y="24.5" width="26.5" height="21"/>
+                                                <rect key="frame" x="47" y="25" width="27" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Z2C-2f-7aJ" firstAttribute="leading" secondItem="PRX-Pc-epL" secondAttribute="leading" id="1E1-Sy-aT9"/>
-                                    <constraint firstAttribute="width" secondItem="PRX-Pc-epL" secondAttribute="height" multiplier="16:9" identifier="PortraitConstraint" id="3Ho-Zl-TlT"/>
+                                    <constraint firstAttribute="width" secondItem="PRX-Pc-epL" secondAttribute="height" multiplier="16:9" identifier="VCPlayerConstraint" id="3Ho-Zl-TlT"/>
                                     <constraint firstAttribute="bottom" secondItem="Z2C-2f-7aJ" secondAttribute="bottom" id="IQv-ZW-s0M"/>
                                     <constraint firstItem="DQI-u0-frq" firstAttribute="centerY" secondItem="PRX-Pc-epL" secondAttribute="centerY" id="PNa-oV-xNH"/>
                                     <constraint firstItem="asl-od-pRC" firstAttribute="centerX" secondItem="PRX-Pc-epL" secondAttribute="centerX" id="Rs9-gT-X3f"/>
@@ -149,19 +149,30 @@
                                     <outletCollection property="gestureRecognizers" destination="Zyi-Xd-Fag" appends="YES" id="wPf-mH-Ivu"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBh-IU-Uu6">
+                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="CHb-rT-mwV" kind="presentation" identifier="FullscreenSegue" animates="NO" id="R5q-Uw-FHe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PRX-Pc-epL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Dro-zG-iT8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PRX-Pc-epL" secondAttribute="trailing" constant="-20" id="krC-3l-BKj"/>
-                            <constraint firstItem="PRX-Pc-epL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="r6i-C6-GEi"/>
+                            <constraint firstItem="MBh-IU-Uu6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="51o-pb-WP4"/>
+                            <constraint firstItem="PRX-Pc-epL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" identifier="VCPlayerConstraint" id="Dro-zG-iT8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MBh-IU-Uu6" secondAttribute="bottom" constant="20" id="eXO-rz-Qh1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PRX-Pc-epL" secondAttribute="trailing" constant="-20" identifier="VCPlayerConstraint" id="krC-3l-BKj"/>
+                            <constraint firstItem="PRX-Pc-epL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" identifier="VCPlayerConstraint" id="r6i-C6-GEi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="palyerView" destination="PRX-Pc-epL" id="kMg-9x-TcT"/>
+                        <outlet property="fullscreenButton" destination="MBh-IU-Uu6" id="Iq5-jF-lBF"/>
+                        <outlet property="playerView" destination="PRX-Pc-epL" id="kMg-9x-TcT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="nGa-8j-L6i" userLabel="Exit" sceneMemberID="exit"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Zyi-Xd-Fag">
                     <connections>
                         <action selector="pan:" destination="PRX-Pc-epL" id="AyW-OV-U6j"/>
@@ -169,6 +180,27 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="245" y="326"/>
+        </scene>
+        <!--Full Screen View Controller-->
+        <scene sceneID="5Lc-SB-MjC">
+            <objects>
+                <viewController id="CHb-rT-mwV" customClass="FullScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bt7-CV-zmn"/>
+                        <viewControllerLayoutGuide type="bottom" id="PKW-fP-hu9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N7h-Hc-HWe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="nGa-8j-L6i" kind="unwind" identifier="UnwindSegue" animates="NO" unwindAction="unwindFromFullscreen:" id="1UZ-IB-aYo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAp-55-TCw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="326"/>
         </scene>
     </scenes>
 </document>

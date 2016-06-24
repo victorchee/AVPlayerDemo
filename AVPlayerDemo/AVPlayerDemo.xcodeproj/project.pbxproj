@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FDBCCCA1D1399E7003AC1AF /* FullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBCCC91D1399E7003AC1AF /* FullScreenViewController.m */; };
 		F0BA05DE1CED4914001CF55A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05DD1CED4914001CF55A /* main.m */; };
 		F0BA05E11CED4914001CF55A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05E01CED4914001CF55A /* AppDelegate.m */; };
 		F0BA05E41CED4914001CF55A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05E31CED4914001CF55A /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FDBCCC81D1399E7003AC1AF /* FullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenViewController.h; sourceTree = "<group>"; };
+		1FDBCCC91D1399E7003AC1AF /* FullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenViewController.m; sourceTree = "<group>"; };
 		F0BA05D91CED4914001CF55A /* AVPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA05DD1CED4914001CF55A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0BA05DF1CED4914001CF55A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 				F0BA05E01CED4914001CF55A /* AppDelegate.m */,
 				F0BA05E21CED4914001CF55A /* ViewController.h */,
 				F0BA05E31CED4914001CF55A /* ViewController.m */,
+				1FDBCCC81D1399E7003AC1AF /* FullScreenViewController.h */,
+				1FDBCCC91D1399E7003AC1AF /* FullScreenViewController.m */,
 				F0BA05F31CED49A3001CF55A /* VCPlayer.h */,
 				F0BA05F41CED49A3001CF55A /* VCPlayer.m */,
 				F0BA05E51CED4914001CF55A /* Main.storyboard */,
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0BA05E41CED4914001CF55A /* ViewController.m in Sources */,
+				1FDBCCCA1D1399E7003AC1AF /* FullScreenViewController.m in Sources */,
 				F0BA05E11CED4914001CF55A /* AppDelegate.m in Sources */,
 				F0BA05DE1CED4914001CF55A /* main.m in Sources */,
 				F0BA05F51CED49A3001CF55A /* VCPlayer.m in Sources */,
@@ -308,6 +314,7 @@
 				F0BA05F21CED4914001CF55A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
