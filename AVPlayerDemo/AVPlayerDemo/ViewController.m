@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "VCPlayerViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+}
 
 @end
 
