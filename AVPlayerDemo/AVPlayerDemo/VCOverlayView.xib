@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VCOverlayView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9k-fg-TvF">
+                    <rect key="frame" x="0.0" y="637" width="30" height="30"/>
+                    <state key="normal" title="Play"/>
+                    <connections>
+                        <action selector="playButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="QfU-71-Idw"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-yu-pf0">
+                    <rect key="frame" x="333" y="646" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G3t-cH-Coc">
+                    <rect key="frame" x="70" y="637" width="265" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-L9-dcs">
+                    <rect key="frame" x="166" y="323" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kj-W0-9sl">
+                    <rect key="frame" x="30" y="646" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6Kj-W0-9sl" secondAttribute="bottom" id="1NB-lJ-65B"/>
+                <constraint firstItem="G3t-cH-Coc" firstAttribute="leading" secondItem="6Kj-W0-9sl" secondAttribute="trailing" id="66a-Mj-F8Y"/>
+                <constraint firstAttribute="bottom" secondItem="G3t-cH-Coc" secondAttribute="bottom" id="9p2-M8-dCf"/>
+                <constraint firstItem="9BH-yu-pf0" firstAttribute="leading" secondItem="G3t-cH-Coc" secondAttribute="trailing" id="Ax9-y5-6OP"/>
+                <constraint firstAttribute="bottom" secondItem="V9k-fg-TvF" secondAttribute="bottom" id="M61-0X-kRc"/>
+                <constraint firstItem="V9k-fg-TvF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MFI-Gs-n1i"/>
+                <constraint firstAttribute="trailing" secondItem="9BH-yu-pf0" secondAttribute="trailing" id="QMY-3Y-CE3"/>
+                <constraint firstItem="6Kj-W0-9sl" firstAttribute="leading" secondItem="V9k-fg-TvF" secondAttribute="trailing" id="cz9-6x-XZ3"/>
+                <constraint firstAttribute="bottom" secondItem="9BH-yu-pf0" secondAttribute="bottom" id="dTI-Yj-NJD"/>
+                <constraint firstItem="TNC-L9-dcs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ouY-su-CcJ"/>
+                <constraint firstItem="TNC-L9-dcs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="stj-eP-BI3"/>
+            </constraints>
+            <connections>
+                <outlet property="currentTimeLabel" destination="6Kj-W0-9sl" id="ciZ-2a-Nd8"/>
+                <outlet property="draggingTimeLabel" destination="TNC-L9-dcs" id="fXo-Tr-xfm"/>
+                <outlet property="playButton" destination="V9k-fg-TvF" id="4w4-yb-dV3"/>
+                <outlet property="remainingTimeLabel" destination="9BH-yu-pf0" id="WL6-tW-KNt"/>
+                <outlet property="timeSlider" destination="G3t-cH-Coc" id="Ltf-lg-JEl"/>
+                <outletCollection property="gestureRecognizers" destination="hWc-Yv-Dtw" appends="YES" id="Gd3-D6-mqO"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="hWc-Yv-Dtw">
+            <connections>
+                <action selector="toggleControls:" destination="iN0-l3-epB" id="7u4-zS-spU"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

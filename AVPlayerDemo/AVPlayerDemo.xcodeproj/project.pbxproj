@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F05E78BA1E645D9A0085AAD3 /* hubblecast.m4v in Resources */ = {isa = PBXBuildFile; fileRef = F05E78B91E645D9A0085AAD3 /* hubblecast.m4v */; };
+		F05E78BE1E6461C90085AAD3 /* VCOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E78BD1E6461C90085AAD3 /* VCOverlayView.m */; };
+		F05E78C01E6462E10085AAD3 /* VCOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05E78BF1E6462E10085AAD3 /* VCOverlayView.xib */; };
+		F05E78C31E64663A0085AAD3 /* VCPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E78C21E64663A0085AAD3 /* VCPlayerController.m */; };
+		F05E78C61E65ACB10085AAD3 /* VCPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05E78C51E65ACB10085AAD3 /* VCPlayerViewController.m */; };
 		F0BA05DE1CED4914001CF55A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05DD1CED4914001CF55A /* main.m */; };
 		F0BA05E11CED4914001CF55A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05E01CED4914001CF55A /* AppDelegate.m */; };
 		F0BA05E41CED4914001CF55A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05E31CED4914001CF55A /* ViewController.m */; };
 		F0BA05E71CED4914001CF55A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA05E51CED4914001CF55A /* Main.storyboard */; };
 		F0BA05E91CED4914001CF55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BA05E81CED4914001CF55A /* Assets.xcassets */; };
 		F0BA05EC1CED4914001CF55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA05EA1CED4914001CF55A /* LaunchScreen.storyboard */; };
-		F0BA05F51CED49A3001CF55A /* VCPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05F41CED49A3001CF55A /* VCPlayer.m */; };
+		F0BA05F51CED49A3001CF55A /* VCPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BA05F41CED49A3001CF55A /* VCPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F05E78B91E645D9A0085AAD3 /* hubblecast.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = hubblecast.m4v; sourceTree = "<group>"; };
+		F05E78BB1E645FA20085AAD3 /* VCTransport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCTransport.h; sourceTree = "<group>"; };
+		F05E78BC1E6461C90085AAD3 /* VCOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCOverlayView.h; sourceTree = "<group>"; };
+		F05E78BD1E6461C90085AAD3 /* VCOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCOverlayView.m; sourceTree = "<group>"; };
+		F05E78BF1E6462E10085AAD3 /* VCOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCOverlayView.xib; sourceTree = "<group>"; };
+		F05E78C11E64663A0085AAD3 /* VCPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPlayerController.h; sourceTree = "<group>"; };
+		F05E78C21E64663A0085AAD3 /* VCPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPlayerController.m; sourceTree = "<group>"; };
+		F05E78C41E65ACB10085AAD3 /* VCPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPlayerViewController.h; sourceTree = "<group>"; };
+		F05E78C51E65ACB10085AAD3 /* VCPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPlayerViewController.m; sourceTree = "<group>"; };
 		F0BA05D91CED4914001CF55A /* AVPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA05DD1CED4914001CF55A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0BA05DF1CED4914001CF55A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,8 +41,8 @@
 		F0BA05E81CED4914001CF55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0BA05EB1CED4914001CF55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0BA05ED1CED4914001CF55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0BA05F31CED49A3001CF55A /* VCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPlayer.h; sourceTree = "<group>"; };
-		F0BA05F41CED49A3001CF55A /* VCPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPlayer.m; sourceTree = "<group>"; };
+		F0BA05F31CED49A3001CF55A /* VCPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPlayerView.h; sourceTree = "<group>"; };
+		F0BA05F41CED49A3001CF55A /* VCPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +79,17 @@
 				F0BA05E01CED4914001CF55A /* AppDelegate.m */,
 				F0BA05E21CED4914001CF55A /* ViewController.h */,
 				F0BA05E31CED4914001CF55A /* ViewController.m */,
-				F0BA05F31CED49A3001CF55A /* VCPlayer.h */,
-				F0BA05F41CED49A3001CF55A /* VCPlayer.m */,
+				F05E78BB1E645FA20085AAD3 /* VCTransport.h */,
+				F0BA05F31CED49A3001CF55A /* VCPlayerView.h */,
+				F0BA05F41CED49A3001CF55A /* VCPlayerView.m */,
+				F05E78BC1E6461C90085AAD3 /* VCOverlayView.h */,
+				F05E78BD1E6461C90085AAD3 /* VCOverlayView.m */,
+				F05E78BF1E6462E10085AAD3 /* VCOverlayView.xib */,
+				F05E78C11E64663A0085AAD3 /* VCPlayerController.h */,
+				F05E78C21E64663A0085AAD3 /* VCPlayerController.m */,
+				F05E78C41E65ACB10085AAD3 /* VCPlayerViewController.h */,
+				F05E78C51E65ACB10085AAD3 /* VCPlayerViewController.m */,
+				F05E78B91E645D9A0085AAD3 /* hubblecast.m4v */,
 				F0BA05E51CED4914001CF55A /* Main.storyboard */,
 				F0BA05E81CED4914001CF55A /* Assets.xcassets */,
 				F0BA05EA1CED4914001CF55A /* LaunchScreen.storyboard */,
@@ -110,6 +133,7 @@
 		F0BA05D11CED4914001CF55A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = VC;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = VictorChee;
 				TargetAttributes = {
@@ -141,8 +165,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05E78BA1E645D9A0085AAD3 /* hubblecast.m4v in Resources */,
 				F0BA05EC1CED4914001CF55A /* LaunchScreen.storyboard in Resources */,
 				F0BA05E91CED4914001CF55A /* Assets.xcassets in Resources */,
+				F05E78C01E6462E10085AAD3 /* VCOverlayView.xib in Resources */,
 				F0BA05E71CED4914001CF55A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,10 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05E78C61E65ACB10085AAD3 /* VCPlayerViewController.m in Sources */,
 				F0BA05E41CED4914001CF55A /* ViewController.m in Sources */,
+				F05E78C31E64663A0085AAD3 /* VCPlayerController.m in Sources */,
 				F0BA05E11CED4914001CF55A /* AppDelegate.m in Sources */,
 				F0BA05DE1CED4914001CF55A /* main.m in Sources */,
-				F0BA05F51CED49A3001CF55A /* VCPlayer.m in Sources */,
+				F05E78BE1E6461C90085AAD3 /* VCOverlayView.m in Sources */,
+				F0BA05F51CED49A3001CF55A /* VCPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +337,7 @@
 				F0BA05F21CED4914001CF55A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,11 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "VCPlayer.h"
+#import "VCPlayerViewController.h"
 
 @interface ViewController ()
-
-@property (weak, nonatomic) IBOutlet VCPlayer *palyerView;
 
 @end
 
@@ -20,10 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *http = @"http://video.cmgame.com/videos/ybcp/qmqzmeiziduomaomaoweinisi4.mp4";
-    NSString *hls = @"http://liveplay.cmgame.com/27871/stream.m3u8";
-    self.palyerView.videoURL = [NSURL URLWithString:hls];
-    [self.palyerView play];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSURL *assetURL = [[NSBundle mainBundle] URLForResource:@"hubblecast" withExtension:@"m4v"];
+    VCPlayerViewController *controller = [[VCPlayerViewController alloc] init];
+    controller.url = assetURL;
+    [self presentViewController:controller animated:YES completion:^{ }];
 }
 
 - (void)didReceiveMemoryWarning {
