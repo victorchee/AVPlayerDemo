@@ -33,7 +33,7 @@
     [self.timer invalidate];
     if (!self.dragging) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:5 repeats:NO block:^(NSTimer * _Nonnull timer) {
-            if (timer.isValid & !self.controlsHidden) {
+            if (timer.isValid && !self.controlsHidden) {
                 [self toggleControls:nil];
             }
         }];
