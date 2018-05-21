@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "VCPlayerViewController.h"
+@import AVKit;
 
 @interface ViewController () {
 }
@@ -24,9 +25,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSURL *assetURL = [[NSBundle mainBundle] URLForResource:@"hubblecast" withExtension:@"m4v"];
-    VCPlayerViewController *controller = [[VCPlayerViewController alloc] init];
-    controller.url = assetURL;
-    [self presentViewController:controller animated:YES completion:^{ }];
+//    VCPlayerViewController *controller = [[VCPlayerViewController alloc] init];
+//    controller.url = assetURL;
+//    [self presentViewController:controller animated:YES completion:^{ }];
+    
+    AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
+    playerViewController.showsPlaybackControls = YES;
+    AVPlayer *player = [AVPlayer playerWithURL:assetURL];
+    playerViewController.player = player;
+    [self presentViewController:playerViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,28 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F52124120804973008B2839 /* VCPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F52124020804973008B2839 /* VCPlayerView.xib */; };
+		1F5212472080841A008B2839 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5212462080841A008B2839 /* TableViewController.m */; };
+		1F52124A20808926008B2839 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F52124920808926008B2839 /* TableViewCell.m */; };
 		1FACA6C72079ABE500546E33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6C62079ABE500546E33 /* AppDelegate.m */; };
 		1FACA6CA2079ABE500546E33 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6C92079ABE500546E33 /* FirstViewController.m */; };
-		1FACA6CD2079ABE500546E33 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6CC2079ABE500546E33 /* SecondViewController.m */; };
 		1FACA6D02079ABE500546E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FACA6CE2079ABE500546E33 /* Main.storyboard */; };
 		1FACA6D22079ABE700546E33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FACA6D12079ABE700546E33 /* Assets.xcassets */; };
 		1FACA6D52079ABE700546E33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FACA6D32079ABE700546E33 /* LaunchScreen.storyboard */; };
 		1FACA6D82079ABE700546E33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6D72079ABE700546E33 /* main.m */; };
 		1FACA6DF2079ABFC00546E33 /* hubblecast.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 1FACA6DE2079ABFC00546E33 /* hubblecast.m4v */; };
 		1FACA6E32079B85000546E33 /* VCPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6E22079B85000546E33 /* VCPlayerView.m */; };
-		1FACA6E62079B86300546E33 /* VCPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6E52079B86300546E33 /* VCPlayerControlView.m */; };
-		1FACA6E82079B87300546E33 /* VCPlayerControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FACA6E72079B87300546E33 /* VCPlayerControlView.xib */; };
-		1FACA6EC2079C5AE00546E33 /* UIView+VCPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FACA6EB2079C5AE00546E33 /* UIView+VCPlayerControlView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F52124020804973008B2839 /* VCPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCPlayerView.xib; sourceTree = "<group>"; };
+		1F5212452080841A008B2839 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		1F5212462080841A008B2839 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		1F52124820808926008B2839 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		1F52124920808926008B2839 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		1FACA6C22079ABE500546E33 /* VCPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FACA6C52079ABE500546E33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1FACA6C62079ABE500546E33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1FACA6C82079ABE500546E33 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		1FACA6C92079ABE500546E33 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		1FACA6CB2079ABE500546E33 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		1FACA6CC2079ABE500546E33 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1FACA6CF2079ABE500546E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FACA6D12079ABE700546E33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FACA6D42079ABE700546E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,12 +39,6 @@
 		1FACA6DE2079ABFC00546E33 /* hubblecast.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = hubblecast.m4v; path = ../../AVPlayerDemo/AVPlayerDemo/hubblecast.m4v; sourceTree = "<group>"; };
 		1FACA6E12079B85000546E33 /* VCPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCPlayerView.h; sourceTree = "<group>"; };
 		1FACA6E22079B85000546E33 /* VCPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCPlayerView.m; sourceTree = "<group>"; };
-		1FACA6E42079B86300546E33 /* VCPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCPlayerControlView.h; sourceTree = "<group>"; };
-		1FACA6E52079B86300546E33 /* VCPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCPlayerControlView.m; sourceTree = "<group>"; };
-		1FACA6E72079B87300546E33 /* VCPlayerControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCPlayerControlView.xib; sourceTree = "<group>"; };
-		1FACA6E92079C3A000546E33 /* VCPlayerControlDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCPlayerControlDelegate.h; sourceTree = "<group>"; };
-		1FACA6EA2079C5AE00546E33 /* UIView+VCPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VCPlayerControlView.h"; sourceTree = "<group>"; };
-		1FACA6EB2079C5AE00546E33 /* UIView+VCPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VCPlayerControlView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,31 +74,20 @@
 				1FACA6DE2079ABFC00546E33 /* hubblecast.m4v */,
 				1FACA6C52079ABE500546E33 /* AppDelegate.h */,
 				1FACA6C62079ABE500546E33 /* AppDelegate.m */,
+				1FACA6E12079B85000546E33 /* VCPlayerView.h */,
+				1FACA6E22079B85000546E33 /* VCPlayerView.m */,
+				1F52124020804973008B2839 /* VCPlayerView.xib */,
+				1F5212452080841A008B2839 /* TableViewController.h */,
+				1F5212462080841A008B2839 /* TableViewController.m */,
+				1F52124820808926008B2839 /* TableViewCell.h */,
+				1F52124920808926008B2839 /* TableViewCell.m */,
 				1FACA6C82079ABE500546E33 /* FirstViewController.h */,
 				1FACA6C92079ABE500546E33 /* FirstViewController.m */,
-				1FACA6CB2079ABE500546E33 /* SecondViewController.h */,
-				1FACA6CC2079ABE500546E33 /* SecondViewController.m */,
-				1FACA6E02079B82A00546E33 /* VCPlayer */,
 				1FACA6CE2079ABE500546E33 /* Main.storyboard */,
 				1FACA6D12079ABE700546E33 /* Assets.xcassets */,
 				1FACA6D32079ABE700546E33 /* LaunchScreen.storyboard */,
 				1FACA6D62079ABE700546E33 /* Info.plist */,
 				1FACA6D72079ABE700546E33 /* main.m */,
-			);
-			path = VCPlayer;
-			sourceTree = "<group>";
-		};
-		1FACA6E02079B82A00546E33 /* VCPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				1FACA6E12079B85000546E33 /* VCPlayerView.h */,
-				1FACA6E22079B85000546E33 /* VCPlayerView.m */,
-				1FACA6E92079C3A000546E33 /* VCPlayerControlDelegate.h */,
-				1FACA6EA2079C5AE00546E33 /* UIView+VCPlayerControlView.h */,
-				1FACA6EB2079C5AE00546E33 /* UIView+VCPlayerControlView.m */,
-				1FACA6E42079B86300546E33 /* VCPlayerControlView.h */,
-				1FACA6E52079B86300546E33 /* VCPlayerControlView.m */,
-				1FACA6E72079B87300546E33 /* VCPlayerControlView.xib */,
 			);
 			path = VCPlayer;
 			sourceTree = "<group>";
@@ -166,9 +151,9 @@
 			files = (
 				1FACA6DF2079ABFC00546E33 /* hubblecast.m4v in Resources */,
 				1FACA6D52079ABE700546E33 /* LaunchScreen.storyboard in Resources */,
+				1F52124120804973008B2839 /* VCPlayerView.xib in Resources */,
 				1FACA6D22079ABE700546E33 /* Assets.xcassets in Resources */,
 				1FACA6D02079ABE500546E33 /* Main.storyboard in Resources */,
-				1FACA6E82079B87300546E33 /* VCPlayerControlView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,11 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FACA6CD2079ABE500546E33 /* SecondViewController.m in Sources */,
+				1F5212472080841A008B2839 /* TableViewController.m in Sources */,
+				1F52124A20808926008B2839 /* TableViewCell.m in Sources */,
 				1FACA6E32079B85000546E33 /* VCPlayerView.m in Sources */,
-				1FACA6E62079B86300546E33 /* VCPlayerControlView.m in Sources */,
 				1FACA6C72079ABE500546E33 /* AppDelegate.m in Sources */,
-				1FACA6EC2079C5AE00546E33 /* UIView+VCPlayerControlView.m in Sources */,
 				1FACA6D82079ABE700546E33 /* main.m in Sources */,
 				1FACA6CA2079ABE500546E33 /* FirstViewController.m in Sources */,
 			);
